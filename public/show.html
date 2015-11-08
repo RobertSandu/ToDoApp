@@ -1,0 +1,77 @@
+<div class="col-md-6">
+
+ <form role="form" name="formEditareTask" ng-controlle="homePageCtrl">
+  <div class="form-group">
+    <label for="title">Title: </label>
+    <input type="text" class="form-control" id="title" ng-model="taskNou.title">
+  </div>
+  <div class="form-group">
+    <label for="description">Description: </label>
+    <input type="text" class="form-control" id="description" ng-model="taskNou.description">
+  </div>
+  <div class="checkbox">
+    <label><input type="checkbox" ng-model="taskNou.completed"> Done task</label>
+  </div>
+
+  <div class="form-group">
+    <label for="startDate">Data inceput: </label>
+    <input type="datetime-local" placeholder="yyyy-MM-ddTHH:mm:ss" min="2001-01-01T00:00:00" max="2016-12-31T00:00:00" ng-model="taskNou.startDate" id="startDate" name="dataInceput">
+  </div>
+
+  <div class="form-group">
+    <label for="endDate">Data sfarsit: </label>
+    <input type="datetime-local" placeholder="yyyy-MM-ddTHH:mm:ss" min="2001-01-01T00:00:00" max="2016-12-31T00:00:00" ng-model="taskNou.endDate" id="endDate">
+  </div>
+  
+  <button type="submit" class="btn btn-default" ng-click="submitFormHome()">Submit</button>
+</form>
+<div class="panel panel-default">
+  
+  <div class="panel-heading">Taskurile curente</div>
+  <div class="panel-body">
+    <p>Lista de taskuri curente</p>
+  </div>
+
+  <!-- Table -->
+  <table class="table">
+    <tr ng-repeat="task in taskuri | filter : { completed : true }">
+    	<td>{{task.title}}</td>
+    	
+    	<td>{{task.description}}</td>
+    	<td><a ui-sref="task_aplicaties.edit({taskID: task.id})" class="btn btn-danger">Editeaza</a></td>
+    	<td><a ui-sref="task_aplicaties.details({taskID: task.id})" class="btn btn-info">Detalii</a></td>
+    	<td><button class="btn btn-success" ng-click="taskDoneUndone(task.id)">Done</button></td>
+    </tr>
+  </table>
+</div>
+
+<div class="panel panel-default">
+  
+  <div class="panel-heading">Taskurile anteriore</div>
+  <div class="panel-body">
+    <p>Lista de taskuri anterioare</p>
+  </div>
+
+  <!-- Table -->
+  <table class="table">
+    <tr ng-repeat="task in taskuri | filter : { completed : false }">
+    	<td>{{task.title}}</td>
+    	
+    	<td>{{task.description}}</td>
+    	<td><a ui-sref="task_aplicaties.edit({taskID: task.id})" class="btn btn-danger">Editeaza</a></td>
+    	<td><a ui-sref="task_aplicaties.details({taskID: task.id})" class="btn btn-info">Detalii</a></td>
+    	<td><button class="btn btn-success" ng-click="taskDoneUndone(task.id)">Undone</button></td>
+    </tr>
+  </table>
+</div>
+
+
+
+
+</div>
+<div class="col-md-6">
+  
+<div ui-view></div>
+
+</div>
+

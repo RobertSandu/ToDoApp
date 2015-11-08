@@ -1,0 +1,25 @@
+ <form role="form" name="formEditareTask" ng-controlle="editPageCtrl">
+  <div class="form-group">
+    <label for="title">Title: </label>
+    <input type="text" class="form-control" id="title" ng-model="taskCurent.title">
+  </div>
+  <div class="form-group">
+    <label for="description">Description: </label>
+    <input type="text" class="form-control" id="description" ng-model="taskCurent.description">
+  </div>
+  <div class="checkbox">
+    <label><input type="checkbox" ng-model="taskCurent.completed"> Done task</label>
+  </div>
+
+  <div class="form-group">
+    <label for="startDate">Data inceput: </label>
+    <input type="datetime-local" placeholder="yyyy-MM-ddTHH:mm:ss" min="2001-01-01T00:00:00" max="2016-12-31T00:00:00" ng-model="taskCurent.startDate" id="startDate" name="dataInceput">
+  </div>
+
+  <div class="form-group">
+    <label for="endDate">Data sfarsit: </label>
+    <input type="datetime-local" placeholder="yyyy-MM-ddTHH:mm:ss" min="2001-01-01T00:00:00" max="2016-12-31T00:00:00" ng-model="taskCurent.endDate" id="endDate">
+  </div>
+  
+  <button type="submit" class="btn btn-default" ng-click="submitFormEdit()">Submit</button>
+</form>

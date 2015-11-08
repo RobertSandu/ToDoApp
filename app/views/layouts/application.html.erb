@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ToDoApp</title>
+  <%= javascript_include_tag "//ajax.googleapis.com/ajax/libs/angularjs/1.4.6/angular.js" %>
+  <%= javascript_include_tag "//ajax.googleapis.com/ajax/libs/angularjs/1.4.6/angular-resource.js" %>
+  <%= javascript_include_tag "//angular-ui.github.io/ui-router/release/angular-ui-router.js" %>
+  <%= javascript_include_tag "//underscorejs.org/underscore-min.js" %>
+
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+
+ 
+  <%= csrf_meta_tags %>
+</head>
+<body ng-app="toDoApp">
+<nav class="navbar navbar-inverse">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<a class="navbar-brand" href="#">To do app - proiect 1 - Ruby on Rails</a>
+		</div>
+		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      		<ul class="nav navbar-nav">
+      			<li><a ui-sref='task_aplicaties'>Tasks</a></li>
+      			
+      		</ul>
+      	</div>
+	</div>
+
+</nav>
+<div class="container-fluid">
+
+	<div class="row">
+		
+		<%= yield %>
+
+	</div>
+</div>
+
+</body>
+</html>

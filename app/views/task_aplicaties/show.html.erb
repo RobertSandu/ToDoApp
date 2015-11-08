@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @task_aplicaty.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @task_aplicaty.description %>
+</p>
+
+<p>
+  <strong>Completed:</strong>
+  <%= @task_aplicaty.completed %>
+</p>
+
+<p>
+  <strong>Startdate:</strong>
+  <%= @task_aplicaty.startDate %>
+</p>
+
+<p>
+  <strong>Enddate:</strong>
+  <%= @task_aplicaty.endDate %>
+</p>
+
+<%= link_to 'Edit', edit_task_aplicaty_path(@task_aplicaty) %> |
+<%= link_to 'Back', task_aplicaties_path %>
